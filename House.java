@@ -14,14 +14,26 @@ public class House extends Building {
 
   }
 
+  /**
+   * Returns whether the house has a dining room
+   * @return  boolean getter for hasDiningRoom
+   */
   public boolean hasDiningRoom() {
     return this.hasDiningRoom;
   }
 
+  /**
+   * Returns number of residents in the house
+   * @return  int number of residents in array 'residents'
+   */
   public int nResidents() {
     return this.residents.size();
   }
 
+  /**
+   * Returns string stating whether the house has a dining room and or an elevator
+   * @return  String description of house attributes
+   */
   public String toString() {
     String desc = super.toString();
 
@@ -34,6 +46,10 @@ public class House extends Building {
     return desc;
   }
 
+  /**
+   * Adds student to the residents of a house
+   * @param   name String name of student moving in
+   */
   public void moveIn(String name) {
     if (this.residents.contains(name)) {
       System.out.println(name + " is already moved in.");
@@ -43,6 +59,11 @@ public class House extends Building {
     }
   }
 
+  /**
+   * Removes student from the residents of a house
+   * @param   name String name of student moving out
+   * @return  String name of student 
+   */
   public String moveOut(String name) {
     if (this.residents.contains(name)) {
       this.residents.remove(name);
@@ -53,10 +74,19 @@ public class House extends Building {
     return name;
   }
 
+  /**
+   * Checks whether a student is a resident of a house
+   * @param   person name of the student 
+   * @return  boolean if student is resident 
+   */
   public boolean isResident(String person) {
     return this.residents.contains(person);
   }
 
+  
+  /**
+   * Example of house class
+   */
   public static void main(String[] args) {
     House h = new House("Lamont", "100 Green Street", 2, true, true);
     System.out.println(h);

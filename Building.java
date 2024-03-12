@@ -5,26 +5,50 @@ public class Building {
     protected int nFloors = 1;
 
     public Building(String name, String address, int nFloors) {
-        if (name != null) { this.name = name; }
-        if (address != null) { this.address = address; } 
+        if (name != null) {
+            this.name = name;
+        }
+        if (address != null) {
+            this.address = address;
+        }
         if (nFloors < 1) {
             throw new RuntimeException("Cannot construct a building with fewer than 1 floor.");
         }
         this.nFloors = nFloors;
     }
 
+    /**
+     * Returns the house's name
+     * 
+     * @return String getter for Name
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     * Returns the house's address
+     * 
+     * @return String getter for Address
+     */
     public String getAddress() {
         return this.address;
     }
 
+    /**
+     * Returns the number of house floors
+     * 
+     * @return String getter for number of house floors
+     */
     public int getFloors() {
         return this.nFloors;
     }
 
+    /**
+     * Returns string stating house name, number of floors, and address
+     * 
+     * @return String description of house attributes
+     */
     public String toString() {
         return this.name + " is a " + this.nFloors + "-story building located at " + this.address;
     }

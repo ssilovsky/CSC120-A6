@@ -9,10 +9,21 @@ public class Library extends Building {
     this.collection = new Hashtable<String, Boolean>();
   }
 
+  /**
+   * Adds book to collection, default makes book available for checkout
+   * 
+   * @param title String of book title
+   */
   public void addTitle(String title) {
     this.collection.put(title, true);
   }
 
+  /**
+   * Removes book title from collection Hashtable
+   * 
+   * @param title String of book title
+   * @return String title of book removed
+   */
   public String removeTitle(String title) {
     if (this.collection.containsKey(title)) {
       this.collection.remove(title);
@@ -23,6 +34,11 @@ public class Library extends Building {
     return title;
   }
 
+  /**
+   * Checks out book, sets book as unavailble in Hastable
+   * 
+   * @param title String of book title
+   */
   public void checkOut(String title) {
     if (this.collection.containsKey(title)) {
       this.collection.replace(title, false);
@@ -33,6 +49,11 @@ public class Library extends Building {
 
   }
 
+  /**
+   * Returns book to collection Hashtable
+   * 
+   * @param title String of book title
+   */
   public void returnBook(String title) {
     if (this.collection.containsKey(title)) {
       System.out.println(title + " is already in the library.");
@@ -42,6 +63,12 @@ public class Library extends Building {
     }
   }
 
+  /**
+   * Checks if book title is in collection
+   * 
+   * @param title String of book title
+   * @return boolean if title exists in collection
+   */
   public boolean containsTitle(String title) {
     if (this.collection.containsKey(title)) {
       System.out.println("We do have " + title);
@@ -52,20 +79,29 @@ public class Library extends Building {
 
   }
 
-  // public boolean isAvailable(String title) {
-  //   if (this.collection.containsKey(title)) {
-  //     if (this.collection.get(title)) {
-  //       System.out.println(title + " is available.");
-  //     } else {
-  //       System.out.println(title + " is not available.");
-  //     }
+  /**
+   * Checks if title is available to be checked out
+   * 
+   * @param title String of book title
+   * @return boolean if title is available to check out
+   */
+  public boolean isAvailable(String title) {
+    if (this.collection.containsKey(title)) {
+      if (this.collection.get(title)) {
+        System.out.println(title + " is available.");
+      } else {
+        System.out.println(title + " is not available.");
+      }
 
-  //   } else {
-  //     System.out.println(title + " is not in the library.");
-  //   }
-  //   return this.collection.get(title);
-  // }
+    } else {
+      System.out.println(title + " is not in the library.");
+    }
+    return this.collection.get(title);
+  }
 
+  /**
+   * Prints collection keys and values
+   */
   public void printCollection() {
     System.out.println(this.collection.keySet() + "=" + this.collection.values());
 
@@ -76,8 +112,9 @@ public class Library extends Building {
     l.addTitle("Othello by Shakespeare");
     l.addTitle("Jason Derulo by Jason D");
     l.printCollection();
+    l.containsTitle("Othello by Shakespeare");
     System.out.println(l.collection.get("Othello by Shakespeare"));
-    // l.isAvailable("Othello by Shakepeare");
+    l.isAvailable("Othello by Shakepeare");
   }
 
 }
