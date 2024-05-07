@@ -6,6 +6,16 @@ public class House extends Building {
   private boolean hasDiningRoom;
   private boolean hasElevator;
 
+  /**
+   * House class constructor
+   * 
+   * @param name    String, name of building, supered from Building class
+   * @param address String, address of building, supered from Building class
+   * @param nFloors int, number of floors in building, supered from Building class
+   * @param hasDiningRoom boolean, whether a house has a dining room
+   * @param hasElevator boolean, whether a house has an elevator
+   * 
+   */
   public House(String name, String address, int nFloors, boolean hasDiningRoom, boolean hasElevator) {
     super(name, address, nFloors);
     this.hasDiningRoom = hasDiningRoom;
@@ -16,7 +26,8 @@ public class House extends Building {
 
   /**
    * Returns whether the house has a dining room
-   * @return  boolean getter for hasDiningRoom
+   * 
+   * @return boolean getter for hasDiningRoom
    */
   public boolean hasDiningRoom() {
     return this.hasDiningRoom;
@@ -24,7 +35,8 @@ public class House extends Building {
 
   /**
    * Returns number of residents in the house
-   * @return  int number of residents in array 'residents'
+   * 
+   * @return int number of residents in array 'residents'
    */
   public int nResidents() {
     return this.residents.size();
@@ -32,7 +44,8 @@ public class House extends Building {
 
   /**
    * Returns string stating whether the house has a dining room and or an elevator
-   * @return  String description of house attributes
+   * 
+   * @return String description of house attributes
    */
   public String toString() {
     String desc = super.toString();
@@ -48,7 +61,8 @@ public class House extends Building {
 
   /**
    * Adds student to the residents of a house
-   * @param   name String name of student moving in
+   * 
+   * @param name String name of student moving in
    */
   public void moveIn(String name) {
     if (this.isResident(name)) {
@@ -61,8 +75,9 @@ public class House extends Building {
 
   /**
    * Removes student from the residents of a house
-   * @param   name String name of student moving out
-   * @return  String name of student 
+   * 
+   * @param name String name of student moving out
+   * @return String name of student
    */
   public String moveOut(String name) {
     if (this.isResident(name)) {
@@ -76,14 +91,14 @@ public class House extends Building {
 
   /**
    * Checks whether a student is a resident of a house
-   * @param   person name of the student 
-   * @return  boolean if student is resident 
+   * 
+   * @param person name of the student
+   * @return boolean if student is resident
    */
   public boolean isResident(String person) {
     return this.residents.contains(person);
   }
 
-  
   /**
    * Example of house class
    */

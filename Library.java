@@ -4,6 +4,14 @@ public class Library extends Building {
 
   private Hashtable<String, Boolean> collection;
 
+  /**
+   * Library class constructor
+   * 
+   * @param name    String, name of building, supered from Building class
+   * @param address String, address of building, supered from Building class
+   * @param nFloors int, number of floors in building, supered from Building class
+   * 
+   */
   public Library(String name, String address, int nFloors) {
     super(name, address, nFloors);
     this.collection = new Hashtable<String, Boolean>();
