@@ -10,7 +10,7 @@ public class Cafe extends Building {
         this.nCoffeeOunces = 2;
         this.nSugarPackets = 3;
         this.nCreams = 4;
-        this.nCups = 1;
+        this.nCups = 2;
     }
 
     
@@ -22,7 +22,7 @@ public class Cafe extends Building {
    */
     public void sellCoffee(int size, int nSugarPackets, int nCreams){
         if (size > this.nCoffeeOunces || nSugarPackets > this.nSugarPackets || nCreams > this.nCreams || this.nCups == 0) {
-            this.restock(size, nSugarPackets, nCreams, 1);
+            this.restock(20, 20, 20, 20);
         }
         this.nCoffeeOunces = this.nCoffeeOunces - size;
         this.nSugarPackets = this.nSugarPackets - nSugarPackets;

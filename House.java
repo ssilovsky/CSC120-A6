@@ -51,7 +51,7 @@ public class House extends Building {
    * @param   name String name of student moving in
    */
   public void moveIn(String name) {
-    if (this.residents.contains(name)) {
+    if (this.isResident(name)) {
       System.out.println(name + " is already moved in.");
     } else {
       this.residents.add(name);
@@ -65,7 +65,7 @@ public class House extends Building {
    * @return  String name of student 
    */
   public String moveOut(String name) {
-    if (this.residents.contains(name)) {
+    if (this.isResident(name)) {
       this.residents.remove(name);
       System.out.println(name + " has moved out.");
     } else {

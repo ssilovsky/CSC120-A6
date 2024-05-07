@@ -26,7 +26,7 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 **YES** 1 pt: The `Library` class implements the requested methods to add / remove or check out / return titles
 
-**PART** 1 pt: The `Library` class implements the requested additional methods (`containsTitle(...)`, `isAvailable(...)`, and `printCollection()`)
+**YES** 1 pt: The `Library` class implements the requested additional methods (`containsTitle(...)`, `isAvailable(...)`, and `printCollection()`)
 
 ### Level 3: `Cafe.java` (3 pts)
 
